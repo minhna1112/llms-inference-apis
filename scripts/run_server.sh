@@ -1,0 +1,2 @@
+MODEL_NAME=codellama/CodeLlama-13b-Instruct-hf
+docker run --rm --gpus all --shm-size 4g -p 8001:80 --name tgi-server -v $(pwd)/checkpoints:/data ghcr.io/huggingface/text-generation-inference:latest --model-id $MODEL_NAME

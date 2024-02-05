@@ -1,0 +1,21 @@
+version: '3.9'
+
+networks:
+  tgi:
+
+services:
+  tgi-client:
+    image: your_registry/tgi_client:v0.0.1
+    environment:
+      - TGI_HOST=127.0.0.1
+      - TGI_PORT=8001
+      - DATAHUB=/app/logs
+      - ENVIRONMENT=dev
+    ports:
+      - "3001:5000"
+    volumes:
+      - ./src/tgi-client/logs:/app/logs
+    networks: 
+    - tgi
+    container_name: tgi-client
+    command: ["uvicorn", "--host", "0.0.0.0", "--port", "5000", "app:app"]

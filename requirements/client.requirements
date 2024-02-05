@@ -1,0 +1,13 @@
+transformers
+python-dotenv
+fastapi==0.82.0
+sse-starlette
+uvicorn==0.18.3
+pytz
+azure-storage-blob
+pymongo
+codetext==0.0.8
+rich
+sentencepiece
+fire
+text-generation==0.6.0
